@@ -1,0 +1,2 @@
+Musiciandex is a web application for the Bloc/Thinkful Web Developer course capstone project.
+Utilizing HTML, CSS, JS and jQuery to make multiple fetch API requests in order to provide users with relevant data for an entered/submitted artist including top albums, links to purchase, and upcoming events.
