@@ -22,10 +22,10 @@
         <p id="js-error-message" class="error-message"></p>
         <section id="results" class="hidden">
           <h2>$('#js-musician-search').val()</h2>
-          <div id="results-list">
+          <div id="results-list" class="group">
             <div>
             <h4 class="results-titles">Top 5 Albums</h4>
-              <div id="top-albums" class="group">
+              <div id="top-albums" class="group item">
                       <div class="item">
                           <img src="#">
                           <h5>Album #1</h5>
@@ -40,24 +40,32 @@
                         </div>
                 </div>
             </div>
-              <div id="itunes-purchase" class="item">
-                  <h4>Purchase Music</h4>
-                  <ul>
-                      <li><img src="#">Link to Buy Music #1</li>
-                      <li><img src="#">Link to Buy Music #2</li>
-                      <li><img src="#">Link to Buy Music #3</li>
-                  </ul>
+            <div>
+                <h4 class="results-titles">Purchase Media</h4>
+                  <div id="items-purchase" class="group item">
+                          <div class="item">
+                              <img src="#">
+                              <h5>Purhcase Link to Album #1</h5>
+                            </div>
+                          <div class="item">
+                              <img src="#">
+                              <h5>Purchase Link to Album #2</h5>
+                            </div>
+                          <div class="item">
+                              <img src="#">
+                              <h5>Purchase Link to Album #3</h5>
+                            </div>
+                    </div>
                 </div>
-              <div id="upcoming-events" class="item">
-                  <h4>Upcoming Events</h4>
-                  <div id="upcoming-events-results">
-                    <ul>
-                        <li><img src="#">Link to Upcoming Event #1</li>
-                        <li><img src="#">Link to Upcoming Event #2</li>
-                        <li><img src="#">Link to Upcoming Event #3</li>
-                    </ul>
+            <div>
+                <h4 class="results-titles">Upcoming Events</h4>
+              <div id="upcoming-events" class="group item">
+                        <div class="item"><img src="#"><h5>Link to Upcoming Event #1</h5></div>
+                        <div class="item"><img src="#"><h5>Link to Upcoming Event #2</h5></div>
+                        <div class="item"><img src="#"><h5>Link to Upcoming Event #3</h5></div>
                   </div>
                 </div>
+            </div>
           </div>
         </section>
     </div>
