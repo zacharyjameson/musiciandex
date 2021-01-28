@@ -10,13 +10,15 @@ function formatQueryParams(params) {
 function displayEvents(responseJson) {
   console.log(responseJson);
     $('#upcoming-events').empty();
+
+for(let i = 0; i <responseJson.events.length && i <= 2; i++){
+    
+}
   $("#upcoming-events").append(
-    `<h4 class="results-titles">Upcoming Events</h4>
-        <div class="group item">
-            <div class="item"><img src="#"><h5>${responseJson.events[0].title}</h5><p>${responseJson.events[0].venue.name}</p><p>${responseJson.events[0].venue.display_location}</p></div>
-            <div class="item"><img src="#"><h5>${responseJson.events[1].title}</h5><p>${responseJson.events[1].venue.name}</p><p>${responseJson.events[1].venue.display_location}</p></div>
-            <div class="item"><img src="#"><h5>${responseJson.events[2].title}</h5><p>${responseJson.events[2].venue.name}</p><p>${responseJson.events[2].venue.display_location}</p></div>
-        </div>`
+    `<div class="item"><img src="#"><h5>${responseJson.events[0].title}</h5><p>${responseJson.events[0].venue.name}</p><p>${responseJson.events[0].venue.display_location}</p></div>
+    <div class="item"><img src="#"><h5>${responseJson.events[1].title}</h5><p>${responseJson.events[1].venue.name}</p><p>${responseJson.events[1].venue.display_location}</p></div>
+    <div class="item"><img src="#"><h5>${responseJson.events[2].title}</h5><p>${responseJson.events[2].venue.name}</p><p>${responseJson.events[2].venue.display_location}</p></div>
+    `
   );
 
   $("#results").removeClass("hidden");

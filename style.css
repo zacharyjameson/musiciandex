@@ -11,3 +11,7 @@
   .hidden {
     display: none;
   }
+
+  .results-titles {
+    text-align: center;
+  }
