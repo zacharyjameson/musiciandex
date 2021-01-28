@@ -41,11 +41,17 @@ function getUpcomingEvents(artistInput) {
     });
 }
 
+function displayArtistName(artistName){
+    $('#searched-artist').empty();
+    $('#searched-artist').append(artistName);
+}
+
 function watchButton() {
   $("form").submit((event) => {
     event.preventDefault();
     const musicianSearch = $("#js-musician-search").val();
     getUpcomingEvents(musicianSearch);
+    displayArtistName(musicianSearch);
   });
 }
 
