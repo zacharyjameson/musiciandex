@@ -17,8 +17,9 @@
             <input type="text" name="musician-search" id="js-musician-search" placeholder="Jack Johnson, Coheed & Cambria, blink-182, etc." required>
             <input type="submit" value="Search">
         </form>
-
+        
         <p id="js-error-message" class="error-message"></p>
+
         <section id="results" class="hidden">
           <h2>$('#js-musician-search').val()</h2>
           <div id="results-list" class="group">
@@ -56,14 +57,7 @@
                             </div>
                     </div>
                 </div>
-            <div>
-                <h4 class="results-titles">Upcoming Events</h4>
-              <div id="upcoming-events" class="group item">
-                        <div class="item"><img src="#"><h5>Link to Upcoming Event #1</h5></div>
-                        <div class="item"><img src="#"><h5>Link to Upcoming Event #2</h5></div>
-                        <div class="item"><img src="#"><h5>Link to Upcoming Event #3</h5></div>
-                  </div>
-                </div>
+            <div id="upcoming-events"></div>
             </div>
           </div>
         </section>
