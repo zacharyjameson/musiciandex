@@ -1,6 +1,6 @@
 const lastFMkey = "ff2a30e86dd95313c30416251bfab2f2";
 const lastFMurl = "http://ws.audioscrobbler.com/2.0/";
-const wikiURL= 'https://en.wikipedia.org/w/api.php?';
+const wikiURL = 'https://en.wikipedia.org/w/api.php?';
 
 //Formatting Query Parameters
 function formatQueryParams(params) {
@@ -78,19 +78,30 @@ function getArtistDescription(artistInput){
     format: 'json',
     prop: 'extracts',
     titles: artistInput,
-    exintro: 1
+    exintro: 1,
   };
 
     descriptionQuery = encodeQueryParams(artistParams);
     const descriptionURL = wikiURL + '?' + descriptionQuery;
 
-    console.log(descriptionURL);
+console.log(descriptionURL, {headers: {"User-Agent": "someone", 'Accept': '*/*'}});
+
+    fetch(descriptionURL)
+      .then((response) => {
+        if(response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then((responseJson) => console.log(responseJson))
+      .catch((err) => {
+        $('#js-error-message').text(`Whoops! ${err.message}`);
+      });
 
 }
 
 //LastFM Request for Top Albums Limiting to 5
 function getTopAlbums(artistInput) {
-  artistInput = artistInput.replace(/\s/g, "");
 
   const albumParams = {
     api_key: lastFMkey,
