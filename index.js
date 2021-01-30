@@ -48,10 +48,20 @@ function displayEvents(responseJson) {
   $("#results").removeClass("hidden");
 }
 
+function displayArtistDescription(responseJson) {
+  console.log(responseJson);
+  $('#artist-description').empty();
+  let artistID = Object.values(responseJson.query.pages);
+  const artistBio = artistID[0].extract;
+
+  $('#artist-description').append(artistBio);
+}
+
 //SeatGeek Upcoming Events Request
 function getUpcomingEvents(artistInput) {
   artistInput = artistInput.replace(/\s+/g, "-");
   artistInput = artistInput.replace('&', "and");
+  artistInput = artistInput.replace('Ó', 'O');
 
   const seatGeekURL = `https://api.seatgeek.com/2/events?client_id=MjE1MTkyODd8MTYxMTc5OTA3Ny40NDYwODkz&performers.slug=${artistInput}`;
   console.log(seatGeekURL);
@@ -71,7 +81,7 @@ function getUpcomingEvents(artistInput) {
 
 //Wikipedia Artist Description Request
 function getArtistDescription(artistInput){
-  artistInput = artistInput.replace(/\s/g, "");
+  artistInput = artistInput.replace('&', "and");
 
   const artistParams = {
     action: 'query',
@@ -79,12 +89,13 @@ function getArtistDescription(artistInput){
     prop: 'extracts',
     titles: artistInput,
     exintro: 1,
+    origin: '*'
   };
 
     descriptionQuery = encodeQueryParams(artistParams);
-    const descriptionURL = wikiURL + '?' + descriptionQuery;
+    const descriptionURL = wikiURL + descriptionQuery;
 
-console.log(descriptionURL, {headers: {"User-Agent": "someone", 'Accept': '*/*'}});
+console.log(descriptionURL);
 
     fetch(descriptionURL)
       .then((response) => {
@@ -93,7 +104,7 @@ console.log(descriptionURL, {headers: {"User-Agent": "someone", 'Accept': '*/*'}
         }
         throw new Error(response.statusText);
       })
-      .then((responseJson) => console.log(responseJson))
+      .then((responseJson) => displayArtistDescription(responseJson))
       .catch((err) => {
         $('#js-error-message').text(`Whoops! ${err.message}`);
       });

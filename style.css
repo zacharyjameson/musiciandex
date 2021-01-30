@@ -1,21 +1,21 @@
 .group {
-    display: flex;
-    flex-direction: column;
-  }
-  
+  display: flex;
+  flex-direction: column;
+}
+
 .item {
-    flex: 1;
-    margin: 10px;
-  }
+  flex: 1;
+  margin: 10px;
+}
 
-  .hidden {
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  .results-titles {
-    text-align: center;
-  }
+.results-titles {
+  text-align: center;
+}
 
-  #searched-artist {
-    text-align: center;
-  }
+#searched-artist {
+  text-align: center;
+}

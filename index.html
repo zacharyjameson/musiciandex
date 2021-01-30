@@ -14,7 +14,7 @@
         <h4>Enter an musician or band name below</h4>
         <form id="js-form">
             <label for="js-musician-search">Musician Search</label>
-            <input type="text" name="musician-search" id="js-musician-search" placeholder="Jack Johnson, Coheed & Cambria, blink-182, etc." required>
+            <input type="text" name="musician-search" id="js-musician-search" placeholder="Explosions in the Sky, Coheed & Cambria, blink-182, Ólafur Arnalds, etc." required>
             <input type="submit" value="Search">
         </form>
         
@@ -23,27 +23,13 @@
         <section id="results" class="hidden">
           <h2 id="searched-artist"></h2>
           <div id="results-list" class="group">
+            <div class="group item">
+              <div id="artist-description" class="item"></div>
+            </div>
             <div>
             <h4 class="results-titles">Top Albums</h4>
               <ol id="top-albums" class="group item"></ol>
             </div>
-            <div>
-                <h4 class="results-titles">Purchase Media</h4>
-                  <div id="items-purchase" class="group item">
-                          <div class="item">
-                              <img src="#">
-                              <h5>Purhcase Link to Album #1</h5>
-                            </div>
-                          <div class="item">
-                              <img src="#">
-                              <h5>Purchase Link to Album #2</h5>
-                            </div>
-                          <div class="item">
-                              <img src="#">
-                              <h5>Purchase Link to Album #3</h5>
-                            </div>
-                    </div>
-                </div>
             <div>
               <h4 class="results-titles">Upcoming Events</h4>
               <div id="upcoming-events" class="group item"></div>
