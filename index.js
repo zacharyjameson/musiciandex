@@ -1,5 +1,5 @@
 const lastFMkey = "ff2a30e86dd95313c30416251bfab2f2";
-const lastFMurl = "http://ws.audioscrobbler.com/2.0/";
+const lastFMurl = "https://ws.audioscrobbler.com/2.0/";
 const wikiURL = 'https://en.wikipedia.org/w/api.php?';
 
 //Formatting Query Parameters
@@ -17,7 +17,6 @@ function encodeQueryParams(params) {
 //Get Album Images
 function getAlbumImage(arrImages){
   var image = arrImages.filter(x => x.size == 'large');
-  debugger;
   if(image){
     return image[0]["#text"]
   }
