@@ -66,6 +66,26 @@ h2 {
   border-radius: 10px;
 }
 
+a {
+  font-style: italic;
+}
+
+.albums-events a {
+  font-style: italic;
+  font-weight: bold;
+  border: 2px solid black;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.albums-events a:hover{
+    background-color: greenyellow;
+    color: black;
+}
+
 @media all and (min-width: 800px){
   .group {
     flex-direction: row;

@@ -46,7 +46,7 @@ function displayEvents(responseJson) {
   $("#upcoming-events").empty();
   let upcomingEvents = ``;
 
-  for (let i = 0; i < responseJson.events.length && i <= 2; i++) {
+  for (let i = 0; i < responseJson.events.length && i <= 5; i++) {
     upcomingEvents += `<div class="item">
                         <h5>${responseJson.events[i].title}</h5>
                         <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
