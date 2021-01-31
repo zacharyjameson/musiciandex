@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Musiciandex</h1>
-        <h4>Enter an musician or band name below</h4>
+        <h4>Enter a musician or band name below</h4>
         <form id="js-form">
             <label for="js-musician-search">Musician Search</label>
             <input type="text" name="musician-search" id="js-musician-search" placeholder="Explosions in the Sky, Coheed & Cambria, blink-182, Ólafur Arnalds, etc." required>
@@ -22,17 +22,19 @@
 
         <section id="results" class="hidden">
           <h2 id="searched-artist"></h2>
-          <div id="results-list" class="group">
-            <div class="group item">
-              <div id="artist-description" class="item"></div>
-            </div>
+          <div id="results-list" class="hidden">
             <div>
+              <div id="artist-description"></div>
+            </div>
+            <div class="group">
+              <div id="albums" class="item">
             <h4 class="results-titles">Top Albums</h4>
-              <ol id="top-albums" class="group item"></ol>
+              <ol id="top-albums"></ol>
             </div>
-            <div>
+            <div id="events" class="item">
               <h4 class="results-titles">Upcoming Events</h4>
-              <div id="upcoming-events" class="group item"></div>
+              <div id="upcoming-events"></div>
+            </div>
             </div>
             </div>
           </div>

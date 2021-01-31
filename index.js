@@ -1,6 +1,5 @@
 const lastFMkey = "ff2a30e86dd95313c30416251bfab2f2";
 const lastFMurl = "https://ws.audioscrobbler.com/2.0/";
-const wikiURL = 'https://en.wikipedia.org/w/api.php?';
 
 //Formatting Query Parameters
 function formatQueryParams(params) {
@@ -31,8 +30,9 @@ function displayTopAlbums(responseJson){
   let topAlbums = ``;
 
   for(let i = 0; i < responseJson.topalbums.album.length; i++){
-    topAlbums += `<li class="item"><img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
-                  <h5>${responseJson.topalbums.album[i].name}</h5>
+    topAlbums += `<li class="item">
+                  <h4>${responseJson.topalbums.album[i].name}</h4>
+                  <img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
                   <p><a href="${responseJson.topalbums.album[i].url}">Listen to the Album</a></p>
                   <p>Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
@@ -56,15 +56,15 @@ function displayEvents(responseJson) {
   }
   $("#upcoming-events").append(upcomingEvents);
   $("#results").removeClass("hidden");
+  $('#results-list').removeClass('hidden');
 }
 
 function displayArtistDescription(responseJson) {
   console.log(responseJson);
   $('#artist-description').empty();
-  let artistID = Object.values(responseJson.query.pages);
-  const artistBio = artistID[0].extract;
+  const artistDescription = responseJson.artist.bio.summary;
 
-  $('#artist-description').append(artistBio);
+  $('#artist-description').append(artistDescription);
 }
 
 //SeatGeek Upcoming Events Request
@@ -89,21 +89,18 @@ function getUpcomingEvents(artistInput) {
     });
 }
 
-//Wikipedia Artist Description Request
+//LastFM Artist Description Request
 function getArtistDescription(artistInput){
-  artistInput = artistInput.replace('&', "and");
 
   const artistParams = {
-    action: 'query',
+    method: 'artist.getinfo',
+    api_key: lastFMkey,
     format: 'json',
-    prop: 'extracts',
-    titles: artistInput,
-    exintro: 1,
-    origin: '*'
+    artist: artistInput,
   };
 
     descriptionQuery = encodeQueryParams(artistParams);
-    const descriptionURL = wikiURL + descriptionQuery;
+    const descriptionURL = lastFMurl + '?' + descriptionQuery;
 
 console.log(descriptionURL);
 
@@ -121,7 +118,7 @@ console.log(descriptionURL);
 
 }
 
-//LastFM Request for Top Albums Limiting to 5
+//LastFM Request for Top Albums Limiting to 3
 function getTopAlbums(artistInput) {
 
   const albumParams = {
@@ -129,7 +126,7 @@ function getTopAlbums(artistInput) {
     method: "artist.gettopalbums",
     artist: artistInput,
     format: "json",
-    limit: 5,
+    limit: 3,
   };
 
   const albumQuery = encodeQueryParams(albumParams);

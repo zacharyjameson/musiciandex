@@ -3,8 +3,33 @@
 }
 
 body {
-  width: 60%;
-  align-content: center;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+#results {
+  display: inline-block;
+  text-align: left;
+}
+
+.results-titles {
+  text-align: center;
+}
+
+ol {
+  padding: 0;
+}
+
+img {
+  border-radius: 5%;
 }
 
 .group {
@@ -21,3 +46,26 @@ body {
   display: none;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#events {
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+#albums {
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+@media all and (min-width: 800px){
+  .group {
+    flex-direction: row;
+  }
+}
