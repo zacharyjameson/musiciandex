@@ -26,6 +26,7 @@ body {
 
 ol {
   padding: 0;
+  list-style: none;
 }
 
 img {
@@ -40,6 +41,7 @@ img {
 .item {
   flex: 1;
   margin: 10px;
+  text-align: center;
 }
 
 .hidden {
