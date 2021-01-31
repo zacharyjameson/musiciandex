@@ -14,6 +14,17 @@ function encodeQueryParams(params) {
   return encodedItems.join('&');
 }
 
+//Get Album Images
+function getAlbumImage(arrImages){
+  var image = arrImages.filter(x => x.size == 'large');
+  debugger;
+  if(image){
+    return image[0]["#text"]
+  }
+   
+  return "#";
+}
+
 //Display Top Albums
 function displayTopAlbums(responseJson){
   console.log(responseJson);
@@ -21,7 +32,7 @@ function displayTopAlbums(responseJson){
   let topAlbums = ``;
 
   for(let i = 0; i < responseJson.topalbums.album.length; i++){
-    topAlbums += `<li class="item">
+    topAlbums += `<li class="item"><img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
                   <h5>${responseJson.topalbums.album[i].name}</h5>
                   <p><a href="${responseJson.topalbums.album[i].url}">Listen to the Album</a></p>
                   <p>Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
@@ -37,7 +48,7 @@ function displayEvents(responseJson) {
   let upcomingEvents = ``;
 
   for (let i = 0; i < responseJson.events.length && i <= 2; i++) {
-    upcomingEvents += `<div class="item"><img src="#">
+    upcomingEvents += `<div class="item">
                         <h5>${responseJson.events[i].title}</h5>
                         <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
                         <p>${responseJson.events[i].venue.display_location}</p>
