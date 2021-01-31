@@ -34,7 +34,7 @@ function displayTopAlbums(responseJson){
                   <h4>${responseJson.topalbums.album[i].name}</h4>
                   <img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
                   <p><a href="${responseJson.topalbums.album[i].url}">Listen to the Album</a></p>
-                  <p>Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
+                  <p class="playcount">Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
   }
   $('#top-albums').append(topAlbums);

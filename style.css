@@ -67,11 +67,10 @@ h2 {
 }
 
 a {
-  font-style: italic;
+  text-decoration: none;
 }
 
 .albums-events a {
-  font-style: italic;
   font-weight: bold;
   border: 2px solid black;
   background-color: black;
@@ -84,6 +83,11 @@ a {
 .albums-events a:hover{
     background-color: greenyellow;
     color: black;
+}
+
+.playcount {
+  font-size: .8em;
+  font-style: italic;
 }
 
 @media all and (min-width: 800px){
