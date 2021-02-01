@@ -9,6 +9,14 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+input[type="text"] {
+  width: 35%;
+}
+
+div {
+  padding: 5px;
+}
+
 .container {
   margin: auto;
   width: 80%;
