@@ -45,14 +45,18 @@ function displayEvents(responseJson) {
   console.log(responseJson);
   $("#upcoming-events").empty();
   let upcomingEvents = ``;
-
-  for (let i = 0; i < responseJson.events.length && i <= 5; i++) {
+  
+if (responseJson.events.length === 0) {
+  upcomingEvents += `<div class="item"><p>No Upcoming Events Listed</p></div>`;
+} else {
+  for (let i = 0; i < responseJson.events.length && i <= 4; i++) {
     upcomingEvents += `<div class="item">
-                        <h5>${responseJson.events[i].title}</h5>
-                        <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
-                        <p>${responseJson.events[i].venue.display_location}</p>
-                        <p><a href="${responseJson.events[i].venue.url}" target="_blank">Buy Tickets!</a></p>
-                        </div>`
+      <h5>${responseJson.events[i].title}</h5>
+      <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
+      <p>${responseJson.events[i].venue.display_location}</p>
+      <p><a href="${responseJson.events[i].venue.url}" target="_blank">Buy Tickets!</a></p>
+      </div>`
+    }
   }
   $("#upcoming-events").append(upcomingEvents);
   $("#results").removeClass("hidden");
