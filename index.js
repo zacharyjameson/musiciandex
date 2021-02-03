@@ -28,14 +28,18 @@ function displayTopAlbums(responseJson){
   console.log(responseJson);
   $('#top-albums').empty();
   let topAlbums = ``;
+if(responseJson.error === 6){
+  topAlbums += `<li class="item">No Albums Found</li>`
+} else {
 
   for(let i = 0; i < responseJson.topalbums.album.length; i++){
     topAlbums += `<li class="item">
                   <h4>${responseJson.topalbums.album[i].name}</h4>
                   <img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
-                  <p><a href="${responseJson.topalbums.album[i].url}" target="_blank">Listen to the Album</a></p>
+                  <p><a href="${responseJson.topalbums.album[i].url}" target="_blank" alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
                   <p class="playcount">Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
+  }
   }
   $('#top-albums').append(topAlbums);
 }
@@ -66,7 +70,13 @@ if (responseJson.events.length === 0) {
 function displayArtistDescription(responseJson) {
   console.log(responseJson);
   $('#artist-description').empty();
-  const artistDescription = responseJson.artist.bio.summary;
+  let artistDescription = ``;
+
+  if(responseJson.error === 6) {
+    artistDescription += `<p>Whoopsie Daisy! ${responseJson.message}</p>`
+  } else {
+    artistDescription += `${responseJson.artist.bio.summary}`;
+  }
 
   $('#artist-description').append(artistDescription);
 }
@@ -76,6 +86,7 @@ function getUpcomingEvents(artistInput) {
   artistInput = artistInput.replace(/\s+/g, "-");
   artistInput = artistInput.replace('&', "and");
   artistInput = artistInput.replace('Ó', 'O');
+  artistInput = artistInput.replace('á', 'a');
 
   const seatGeekURL = `https://api.seatgeek.com/2/events?client_id=MjE1MTkyODd8MTYxMTc5OTA3Ny40NDYwODkz&performers.slug=${artistInput}`;
   console.log(seatGeekURL);

@@ -14,7 +14,8 @@ input[type="text"] {
 }
 
 div {
-  padding: 5px;
+  padding: 0px;
+  padding-bottom: 5px;
 }
 
 .container {
@@ -74,6 +75,10 @@ h2 {
   border-radius: 10px;
 }
 
+#artist-description {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
 }
@@ -89,8 +94,9 @@ a {
 }
 
 .albums-events a:hover{
-    background-color: greenyellow;
-    color: black;
+    background-color: #496D89;
+    border-color: #496D89;
+    color: white;
 }
 
 .playcount {
