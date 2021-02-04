@@ -13,13 +13,20 @@ body {
   color: white;
   text-shadow: 2px 2px 5px #000000;
   background-image: url('images/crowd-background.jpg');
-  background-size: 100%;
   background-attachment: fixed;
+  background-position: center;
 }
 
 a {
-  text-shadow: none;
   color: #1DB954;
+}
+
+a:hover {
+  color: grey;
+}
+
+a:visited {
+  color: purple;
 }
 
 input[type="text"] {
@@ -167,4 +174,9 @@ a {
   .group {
     flex-direction: row;
   }
+
+  body {
+    background-size: 100%;
+  }
+    
 }

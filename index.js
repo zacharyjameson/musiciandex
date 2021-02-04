@@ -28,7 +28,7 @@ function displayTopAlbums(responseJson){
   console.log(responseJson);
   $('#top-albums').empty();
   let topAlbums = ``;
-  let tabIndex = 6;
+  let tabIndex = 3;
 
 if(responseJson.error === 6){
   topAlbums += `<li class="item">No Albums Found</li>`
@@ -52,7 +52,7 @@ function displayEvents(responseJson) {
   console.log(responseJson);
   $("#upcoming-events").empty();
   let upcomingEvents = ``;
-  let tabIndex = 3;
+  let tabIndex = 6;
   
 if (responseJson.events.length === 0) {
   upcomingEvents += `<div class="item"><p>No Upcoming Events Listed</p></div>`;
