@@ -38,7 +38,7 @@ if(responseJson.error === 6){
     topAlbums += `<li class="item">
                   <h4>${responseJson.topalbums.album[i].name}</h4>
                   <img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
-                  <p><a href="${responseJson.topalbums.album[i].url}" target="_blank" tabindex=${String(tabIndex)} alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
+                  <p><a href="${responseJson.topalbums.album[i].url}" tabindex=${String(tabIndex)} target="_blank"  alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
                   <p class="playcount">Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
                   tabIndex++;
