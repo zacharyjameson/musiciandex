@@ -176,6 +176,7 @@ function watchButton() {
     displayArtistName(musicianSearch);
     getTopAlbums(musicianSearch);
     getArtistDescription(musicianSearch);
+    $('#title-card').removeClass('lowered');
   });
 }
 
