@@ -28,6 +28,8 @@ function displayTopAlbums(responseJson){
   console.log(responseJson);
   $('#top-albums').empty();
   let topAlbums = ``;
+  let tabIndex = 6;
+
 if(responseJson.error === 6){
   topAlbums += `<li class="item">No Albums Found</li>`
 } else {
@@ -39,6 +41,7 @@ if(responseJson.error === 6){
                   <p><a href="${responseJson.topalbums.album[i].url}" target="_blank" alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
                   <p class="playcount">Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
+                  tabIndex++;
   }
   }
   $('#top-albums').append(topAlbums);
@@ -49,6 +52,7 @@ function displayEvents(responseJson) {
   console.log(responseJson);
   $("#upcoming-events").empty();
   let upcomingEvents = ``;
+  let tabIndex = 3;
   
 if (responseJson.events.length === 0) {
   upcomingEvents += `<div class="item"><p>No Upcoming Events Listed</p></div>`;
@@ -58,8 +62,10 @@ if (responseJson.events.length === 0) {
       <h5>${responseJson.events[i].title}</h5>
       <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
       <p>${responseJson.events[i].venue.display_location}</p>
-      <p><a href="${responseJson.events[i].venue.url}" target="_blank">Buy Tickets!</a></p>
+      <p><a href="${responseJson.events[i].venue.url}" tabindex=${String(tabIndex)} target="_blank">Buy Tickets!</a></p>
       </div>`
+
+      tabIndex++;
     }
   }
   $("#upcoming-events").append(upcomingEvents);
@@ -172,8 +178,8 @@ function watchButton() {
   $("form").submit((event) => {
     event.preventDefault();
     const musicianSearch = $("#js-musician-search").val();
-    getUpcomingEvents(musicianSearch);
     displayArtistName(musicianSearch);
+    getUpcomingEvents(musicianSearch);
     getTopAlbums(musicianSearch);
     getArtistDescription(musicianSearch);
     $('#title-card').removeClass('lowered');

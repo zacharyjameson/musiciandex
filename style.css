@@ -10,10 +10,43 @@ body {
   width: 80%;
   margin: auto;
   font-family: 'Roboto', sans-serif;
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
+  background-image: url('images/crowd-background.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+a {
+  text-shadow: none;
+  color: #1DB954;
 }
 
 input[type="text"] {
   width: 35%;
+}
+
+input[type='submit'] {
+  background-color: #1DB954;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 125px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  border-color: black;
+}
+
+input[type='submit']:hover {
+  background-color: black;
+  transition: .3s all;
+}
+
+input[type='submit']:active {
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 1);
+  transform: scale(0.98);
 }
 
 div {
@@ -74,14 +107,23 @@ h2 {
   text-align: center;
 }
 
-#events {
-  border: 5px solid black;
+#artist-description {
+  border: 5px solid rgb(66, 85, 100);
   border-radius: 10px;
+  background-color: rgba(66, 85, 100, 0.9);
+  padding: 15px;
+}
+
+#events {
+  border: 5px solid rgb(66, 85, 100);
+  border-radius: 10px;
+  background-color: rgba(66, 85, 100, 0.9);
 }
 
 #albums {
-  border: 5px solid black;
+  border: 5px solid rgb(66, 85, 100);
   border-radius: 10px;
+  background-color: rgba(66, 85, 100, 0.9);
 }
 
 #artist-description {
@@ -103,15 +145,22 @@ a {
 }
 
 .albums-events a:hover{
-    background-color: #496D89;
-    border-color: #496D89;
+    background-color: #1DB954;
+    border-color: #1DB954;
     color: white;
+    transition: .3s all;
+}
+
+.albums-events a:active{
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 1);
+  transform: scale(0.98);
 }
 
 .playcount {
   font-size: .8em;
   font-style: italic;
 }
+
 
 @media all and (min-width: 800px){
   .group {
