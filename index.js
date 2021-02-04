@@ -38,7 +38,7 @@ if(responseJson.error === 6){
     topAlbums += `<li class="item">
                   <h4>${responseJson.topalbums.album[i].name}</h4>
                   <img src="${getAlbumImage(responseJson.topalbums.album[i].image)}">
-                  <p><a href="${responseJson.topalbums.album[i].url}" tabindex=${String(tabIndex)} target="_blank"  alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
+                  <p><a href="${responseJson.topalbums.album[i].url}" tabindex="${String(tabIndex)}" target="_blank"  alt="Searched Band Album Cover Artwork">Listen to the Album</a></p>
                   <p class="playcount">Total Plays: ${responseJson.topalbums.album[i].playcount}</p>
                   </li>`
                   tabIndex++;
@@ -62,7 +62,7 @@ if (responseJson.events.length === 0) {
       <h5>${responseJson.events[i].title}</h5>
       <p>${responseJson.events[i].venue.name}, ${responseJson.events[i].datetime_utc.slice(0, 10)}</p>
       <p>${responseJson.events[i].venue.display_location}</p>
-      <p><a href="${responseJson.events[i].venue.url}" tabindex=${String(tabIndex)} target="_blank">Buy Tickets!</a></p>
+      <p><a href="${responseJson.events[i].venue.url}" tabindex="${String(tabIndex)}" target="_blank">Buy Tickets!</a></p>
       </div>`
 
       tabIndex++;
