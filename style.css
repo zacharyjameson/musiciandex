@@ -46,7 +46,7 @@ input[type='submit']:hover {
 
 input[type='submit']:active {
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 1);
-  transform: scale(0.98);
+  transform: translateY(3px);
 }
 
 div {
@@ -153,7 +153,8 @@ a {
 
 .albums-events a:active{
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 1);
-  transform: scale(0.98);
+  transform: translateY(3px);
+
 }
 
 .playcount {
