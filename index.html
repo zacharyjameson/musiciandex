@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Musiciandex</title>
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 id="title-card" class="lowered">Musiciandex</h1>
-        <h4>Enter a musician or band name below</h4>
-        <form id="js-form">
-            <label for="js-musician-search"></label>
-            <input type="text" name="musician-search" id="js-musician-search" placeholder="Explosions in the Sky, Coheed and Cambria, blink-182, etc." tabindex="1" required>
-            <br><br>
-            <input type="submit" value="Search" tabindex="2">
-        </form>
-        
-        <p id="js-error-message" class="error-message"></p>
+      <h1 id="title-card" class="lowered">Musiciandex</h1>
+      <h5>Enter a musician or band name below</h5>
+      <form id="js-form">
+        <label for="js-musician-search"></label>
+        <input
+          type="text"
+          name="musician-search"
+          id="js-musician-search"
+          placeholder="Explosions in the Sky, Coheed and Cambria, blink-182, etc."
+          tabindex="1"
+          required
+        />
+        <br /><br />
+        <input type="submit" value="Search" tabindex="2" />
+      </form>
 
-        <section id="results" class="hidden">
-          <h2 id="searched-artist"></h2>
-          <div id="results-list" class="hidden">
-            <div>
-              <div id="artist-description"></div>
-            </div>
-            <div class="albums-events">
+      <p id="js-error-message" class="error-message"></p>
+
+      <section id="results" class="hidden">
+        <h2 id="searched-artist"></h2>
+        <div id="results-list" class="hidden">
+          <div>
+            <div id="artist-description"></div>
+          </div>
+          <div class="albums-events">
             <div class="group">
               <div id="albums" class="item">
-            <h4 class="results-titles">Top Albums</h4>
-              <ol id="top-albums"></ol>
-            </div>
-            <div id="events" class="item">
-              <h4 class="results-titles">Upcoming Events</h4>
-              <div id="upcoming-events"></div>
+                <h4 class="results-titles">Top Albums</h4>
+                <ol id="top-albums"></ol>
+              </div>
+              <div id="events" class="item">
+                <h4 class="results-titles">Upcoming Events</h4>
+                <div id="upcoming-events"></div>
+              </div>
             </div>
           </div>
-            </div>
-            </div>
-        </section>
-      </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        </div>
+      </section>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

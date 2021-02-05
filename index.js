@@ -1,12 +1,6 @@
 const lastFMkey = "ff2a30e86dd95313c30416251bfab2f2";
 const lastFMurl = "https://ws.audioscrobbler.com/2.0/";
 
-//Formatting Query Parameters
-function formatQueryParams(params) {
-  const queryItems = Object.keys(params).map((key) => `${key}=${params[key]}`);
-  return queryItems.join("&");
-}
-
 //Formatting Query Params handling & searches
 function encodeQueryParams(params) {
   const encodedItems = Object.keys(params).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -168,12 +162,15 @@ function getTopAlbums(artistInput) {
     });
 }
 
+
+//Displaying artist name and emptying out fields
 function displayArtistName(artistName) {
   $("#searched-artist").empty();
   $('#js-error-message').empty();
   $("#searched-artist").append(artistName);
 }
 
+//Initial watchButton when user hits 'search'
 function watchButton() {
   $("form").submit((event) => {
     event.preventDefault();
