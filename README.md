@@ -4,7 +4,7 @@
 https://zacharyjameson.github.io/musiciandex/
 
 ## Motivation 
-I wanted a build a place where users could both check in on upcoming events as well as get information on background and most listened to albums of users' favorite artists as well as a tool to get a snapshot view of artists they haven't listened to yet.
+I wanted to build a place where users could both check in on upcoming events as well as get information on background and most listened to albums of users' favorite artists as well as a tool to get a snapshot view of artists they haven't listened to yet.
 
 ## Summary
 Users are able to enter in a band, artist or musician name and Musiciandex will return the respective description of the input, upcoming events and top 3 albums of the respective artist. 
